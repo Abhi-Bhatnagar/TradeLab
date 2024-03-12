@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db } from './Firebase'; // Import the Firebase Firestore instance
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import { transform } from 'framer-motion';
+import Footer from './Footer';
 
 function SearchResult() {
   const searchParams = new URLSearchParams(window.location.search);
@@ -205,12 +206,6 @@ function SearchResult() {
     }
   }, [stockData, chartType]);
 
-  const toggleChartType = () => {
-    setChartType(prevChartType => prevChartType === 'area' ? 'candlesticks' : 'area');
-    console.log("y")
-    console.log(chartType)
-  };
-
   const [userLoggedIn, setUserLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -224,41 +219,12 @@ function SearchResult() {
     };
   }, []);
 
-  const handleBuy = async () => {
-    if (userLoggedIn) {
-        const auth = getAuth();
-        const user = auth.currentUser;
-        if (user) {
-            console.log('User ID:', user.uid);
-
-            const db = getFirestore();
-            console.log(db)
-            const usersCollection = collection(db, 'user_info');
-            console.log(usersCollection)
-            const q = query(usersCollection, where('UserID', '==', user.uid));
-            console.log(q)
-            const querySnapshot = await getDocs(q);
-
-            querySnapshot.forEach((doc) => {
-                console.log('Matching document ID:', doc.id);
-                // Do something with the document
-            });
-        }
-    } else {
-        console.log('No user is logged in');
-    }
-};
-
-
-
-  
 return (
-  <div style={{ backgroundColor: '#1E222D', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBottom:'100px', paddingTop:'50px'}}>
+  <div style={{ backgroundColor: '#1E222D', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop:'50px'}}>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-
-      <button onClick={handleBuy} style={{ backgroundColor: '#049981', color: 'white', border: 'none', padding: '10px 40px', margin: '5px', borderRadius: '5px', cursor: 'pointer', transform: 'translate(290%, 200%)'  }}>Buy</button>
-      <button style={{ backgroundColor: '#F23545', color: 'white', border: 'none', padding: '10px 40px', margin: '5px', borderRadius: '5px', cursor: 'pointer', transform: 'translate(300%, 200%)' }}>Sell</button>
+      <button onClick={() => { window.location.href = "/signup"; }} style={{ backgroundColor: '#049981', color: 'white', border: 'none', padding: '10px 40px', margin: '5px', borderRadius: '5px', cursor: 'pointer', transform: 'translate(290%, 200%)'  }}>Buy</button>
+      <button onClick={() => { window.location.href = "/signup"; }} style={{ backgroundColor: '#F23545', color: 'white', border: 'none', padding: '10px 40px', margin: '5px', borderRadius: '5px', cursor: 'pointer', transform: 'translate(300%, 200%)' }}>Sell</button>
       </div>
       <div >
       <div className="tradingview-widget-container" ref={infoContainer}></div>
@@ -270,6 +236,9 @@ return (
         <div className="tradingview-widget-container" ref={analysisContainer}></div>
         <div className="tradingview-widget-container" ref={newsContainer}></div>
       </div>
+      </div>
+      <div style={{width:'100vw'}}>
+      <Footer/>
       </div>
     </div>
   </div>

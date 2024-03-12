@@ -2,36 +2,42 @@ import React from 'react';
 
 const CardContainer = () => {
   return (
-    <div style={styles.container}>
-      <ul style={styles.cards} id="cards">
-        <li style={{position: 'sticky', top: 0, paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%'}} >
-          <div style={styles.cardBody}>
-            <h2>Card 1</h2>
-          </div>
-        </li>
-        <li style={{position: 'sticky', top: 0, paddingTop: '6%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%'}}>
-          <div style={styles.cardBody}>
-            <h2>Card 2</h2>
-          </div>
-        </li>
-        <li style={{position: 'sticky', top: 0, paddingTop: '7%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%'}}>
-          <div style={styles.cardBody}>
-            <h2>Card 3</h2>
-          </div>
-        </li>
-        <li style={{position: 'sticky', top: 0, paddingTop: '8%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%'}}>
-          <div style={styles.cardBody}>
-            <h2>Card 4</h2>
-          </div>
-        </li>
-      </ul>
+    <div>
+      
+      <div style={styles.container}>
+      <div style={{ backgroundColor: '#131D28', textAlign: 'center', color: 'white', paddingTop: '200px' }}>
+        <h1>How it Works?</h1>
+      </div>
+        <ul style={styles.cards} id="cards">
+          <li style={{ position: 'sticky', top: 0, paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }} >
+            <div style={styles.cardBody}>
+              <h2>Step 1: create account</h2>
+            </div>
+          </li>
+          <li style={{ position: 'sticky', top: 0, paddingTop: '6%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }}>
+            <div style={styles.cardBody}>
+              <h2>Step 2: Explore Content, rxplore apps countless features for new and experienced traders </h2>
+            </div>
+          </li>
+          <li style={{ position: 'sticky', top: 0, paddingTop: '7%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }}>
+            <div style={styles.cardBody}>
+              <h2>Step 3: Learn, use the learn function to read and understand</h2>
+            </div>
+          </li>
+          <li style={{ position: 'sticky', top: 0, paddingTop: '8%', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }}>
+            <div style={styles.cardBody}>
+              <h2>Step 4: Trade start to buy and sell with virtual money </h2>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
 
 
 const styles = {
-  container:{
+  container: {
     backgroundColor: '#131D28',
     height: '400vh'
   },
@@ -46,7 +52,7 @@ const styles = {
     marginBottom: '4vw',
   },
   cardBody: {
-    backgroundColor: '#52b2cf',
+    backgroundColor: '#192A59',
     boxSizing: 'border-box',
     padding: '30px',
     borderRadius: '50px',
