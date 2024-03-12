@@ -7,6 +7,7 @@ import Footer from "../Footer";
 
 
 function Homepage() {
+  console.log('test')
   return (
     <div style={{ backgroundColor: '#131D28' }}>
       <div style={{ backgroundColor: '#131D28', height: '125vh', zIndex: '1' }}>
