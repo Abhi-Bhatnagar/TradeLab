@@ -17,16 +17,22 @@ function SearchBar() {
         setInputValue(selectedSuggestion.title);
         handleSearch(selectedSuggestion.title);
       } else {
-        let query = inputValue;
-        const ticker = findTickerByCompanyName(inputValue);
-        if (ticker) {
-          query = ticker;
+        if (!isValueInSuggestions(inputValue)) {
+          alert('No suggestions found for the entered value.');
+        } else {
+          let query = inputValue;
+          const ticker = findTickerByCompanyName(inputValue);
+          if (ticker) {
+            query = ticker;
+          }
+          const url = `/search-results?query=${encodeURIComponent(query)}`;
+          window.location.href = url;
         }
-        const url = `/search-results?query=${encodeURIComponent(query)}`;
-        window.location.href = url;
       }
     }
   };
+  
+  
 
   // Function to filter stock suggestions based on input value
   const filterStocks = (input) => {

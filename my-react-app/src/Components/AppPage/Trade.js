@@ -120,9 +120,11 @@ function Trade() {
       
       <div style={{width:'100vw'}}>
         <div className="tradingview-widget-container" ref={tapeContainer}></div>
-        <div style={{height:'35vh'}}>
-          <SearchBar />
-        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <div style={{ height: '35vh', display: 'flex', alignItems: 'center' }}>
+    <SearchBar />
+  </div>
+</div>
         <div style={{height:'50vh', width:'100%', display:'flex', alignItems: 'center', justifyContent: 'space-around'}}>
         <div className="tradingview-widget-container" ref={newsContainer}></div>
         <div className="tradingview-widget-container" ref={gainContainer}></div>

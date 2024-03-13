@@ -335,10 +335,7 @@ function SearchResult() {
     const handleSellStock = async (stockData, userInfoDoc) => {
         const walletBalance = userInfoDoc.data().Wallet;
         if (amountSell !== 0) {
-            const sellProceeds = amountSell * stockData.price;
             // Add returns from wallet
-            await updateDoc(userInfoDoc.ref, { Wallet: parseFloat(walletBalance) + parseFloat(sellProceeds) });
-
             const stockName = stockData.name;
             // Find the stock
             const userStocksCollection = collection(userInfoDoc.ref, 'stocks');
@@ -359,6 +356,8 @@ function SearchResult() {
                     const newIV = (1 - (amountSell / initialQuantity)) * investmentValue;
 
                     // Update user's wallet and stock data
+                    const sellProceeds = amountSell * stockData.price;
+                    await updateDoc(userInfoDoc.ref, { Wallet: parseFloat(walletBalance) + parseFloat(sellProceeds) });
                     await updateDoc(stockDoc.ref, { quantity: remainingQuantity, IV: newIV });
 
                     // Reset amount input field

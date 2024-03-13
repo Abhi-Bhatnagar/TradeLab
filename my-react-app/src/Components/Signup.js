@@ -161,7 +161,7 @@ function Signup() {
 
   const overlayStyle = {
     background:
-      "linear-gradient(to right, #08203b, #2962FF)",
+      "linear-gradient(to bottom right, #2F1F6E, #2962FF)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "0 0",
