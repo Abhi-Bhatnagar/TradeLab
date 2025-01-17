@@ -8,3 +8,7 @@ Link: https://tradelab-8c262.web.app
 •	Integrated Firebase for managing data and hosting services
 
 #Note some developmental bugs still need to be fixed including search function only accomodating stocks and no indexs or alterantive commodities. 
+
+
+https://github.com/user-attachments/assets/83b0f08e-2d5a-4bcb-818c-c45fd1fb5d60
+
